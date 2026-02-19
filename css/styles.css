@@ -222,15 +222,20 @@ button {
     background-color: #2e2f42;
     margin: 0 auto;
     padding: 72px 0;
-    background-image: image-set( 
-        url("../images/dark.tel.jpg") 1x,
-         url("../images/dark.tel@2x.jpg") 2x);
-    background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/dark.tel.jpg");
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/dark.tel.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     max-width: 320px;
     height: 432px;
+}
+@media (min-resolution: 192dpi) {
+    .section-hero {
+        background-image:
+         linear-gradient(rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)), 
+          url("../images/dark.tab-2x.jpg");
+    }
 }
 
 .section-container {
@@ -273,13 +278,15 @@ h1 {
 .btn-primary:focus {
     background-color: #404bbf;
 }
-@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+@media screen and (min-width: 768px) {
     .section-hero {
         padding: 112px 0;
-        background-image: image-set( 
-            url("../images/dark.tab.jpg") 1x,
-             url("../images/dark.tab@2x.jpg") 2x);
-        background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/dark.tab.jpg");
+         
+        background-image: 
+        linear-gradient(rgba(46, 47, 66, 0.7),
+         rgba(46, 47, 66, 0.7)),
+          url("../images/dark.tab.jpg");
+          
         max-width: 768px;
         height: 436px;
     }
@@ -293,19 +300,34 @@ h1 {
         margin-top: 36px;
     }
 }
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+    .section-hero {
+        background-image: 
+        linear-gradient(rgba(46, 47, 66, 0.7),
+         rgba(46, 47, 66, 0.7)),
+          url("../images/dark.tab-2x.jpg");
+    }
+}
 @media screen and (min-width: 1158px) {
     .section-hero {
         padding: 188px 0;
-        background-image: image-set( 
-            url("../images/people.d.jpg") 1x,
-             url("../images/people.dark@2x.jpg") 2x);
-        background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/people.d.jpg");
+        background-image:
+        linear-gradient(rgba(46, 47, 66, 0.7),
+         rgba(46, 47, 66, 0.7)),
+          url("../images/people.d.jpg");
         max-width: 1440px;
         height: 608px;
     }
-   
     .btn-primary {
         margin-top: 48px;
+    }
+}
+@media screen and (min-width: 1158px) and (min-resolution: 192dpi) {
+   .section-hero {
+    background-image: 
+        linear-gradient(rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)),
+        url("../images/people.d-2x.jpg");
     }
 }
     h2 {
@@ -573,8 +595,8 @@ h1 {
     flex-wrap: wrap;
     gap: 72px 24px;
 }
-.portfolio-item-overlay {
-    flex-basis: calc((100% - 24px) / 6);
+.portfolio-item {
+    flex-basis: calc((100% - 24px) / 2);
 }
 .portfolio-name {
     max-width: 356px;
@@ -589,14 +611,12 @@ h1 {
      position: relative;
     gap: 48px 24px;
 }
-.portfolio-item-overlay {
-    flex-basis: calc((100% - 48px) / 6);
-}
 .portfolio-name {
     max-width: 360px;
 
 }
 .portfolio-item {
+    flex-basis: calc((100% - 48px) / 3);
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-item:hover {
@@ -679,7 +699,7 @@ h1 {
 .input-subscribe {
     border: 1px solid #fff;
     border-radius: 4px;
-    max-width: 100%;
+    max-width: 264px;
     height: 40px;   
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color:  #2e2f42;
@@ -929,7 +949,7 @@ h1 {
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop.is -open {
+.backdrop.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
